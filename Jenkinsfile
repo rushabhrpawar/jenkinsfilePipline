@@ -1,5 +1,5 @@
 pipeline{
-    agent any 
+    agent any
 
     stages{
         stage("Maven testing stage "){
@@ -9,6 +9,10 @@ pipeline{
             
         }
         stage("Maven compile stage"){
+           input {
+            message "Should we continue ?"
+            ok "yes we should "
+           }
             steps{
                 echo "========compile A========"
             }
