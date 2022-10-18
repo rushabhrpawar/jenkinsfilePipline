@@ -19,14 +19,6 @@ pipeline{
             }
             
         }
-        stage("checking java version"){
-            steps{
-                sh 
-                '''
-                java --version
-                '''
-            }
-        }
         stage("Maven compile stage"){
            input {
             message "Should we continue ?"
