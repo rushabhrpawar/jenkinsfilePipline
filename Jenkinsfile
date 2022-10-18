@@ -17,7 +17,7 @@ pipeline{
             steps{
                 sh "cd aurus-aesdk-service-enterprise/"
                  sh "mvn --version"
-                 sh "mvn clean"
+                 sh "cd aurus-aesdk-service-enterprise/ && mvn clean"
                 echo "========testing A========"
             }
             
