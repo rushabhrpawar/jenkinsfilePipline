@@ -15,6 +15,7 @@ pipeline{
         }
         stage("Maven testing stage "){
             steps{
+                sh "cd aurus-aesdk-service-enterprise
                  sh "mvn --version"
                  sh "mvn clean"
                 echo "========testing A========"
