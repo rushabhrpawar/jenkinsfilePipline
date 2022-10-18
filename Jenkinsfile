@@ -6,6 +6,11 @@ pipeline{
         
     }
     stages{
+         stage('git checking '){
+            steps{
+                git branch: '*/jan-feb-2020', url: 'aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git'
+            }
+        }
         stage("Maven testing stage "){
             steps{
                  sh "mvn --version"
@@ -14,11 +19,7 @@ pipeline{
             }
             
         }
-        stage('git checking '){
-            steps{
-                git branch: '*/jan-feb-2020', url: 'aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git'
-            }
-        }
+       
         stage("java version check"){
             steps{
                 sh '''
