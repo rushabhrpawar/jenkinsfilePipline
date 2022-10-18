@@ -2,17 +2,27 @@ pipeline{
     agent any
     tools {
         maven 'mavenBuild'
+        jdk 'javaversion8'
     }
 
     stages{
         stage("Maven testing stage "){
-            steps{ 
-                sh '''
-                mvn -version 
+            steps{
+                sh 
+                '''
+                mvn --version
                 '''
                 echo "========testing A========"
             }
             
+        }
+        stage('checking java version'){
+            steps{
+                sh 
+                '''
+                java --version
+                '''
+            }
         }
         stage("Maven compile stage"){
            input {
