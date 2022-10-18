@@ -3,8 +3,7 @@ pipeline{
     tools {
         maven 'mavenBuild'
         jdk 'javaversion8'
-        git 'mygitproject'
-        
+               
     }
     stages{
          stage('git checking '){
