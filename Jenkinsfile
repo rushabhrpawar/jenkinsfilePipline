@@ -15,7 +15,6 @@ pipeline{
         }
         stage("Maven testing stage "){
             steps{
-                sh "cd aurus-aesdk-service-enterprise/"
                  sh "mvn --version"
                  sh "cd aurus-aesdk-service-enterprise/ && mvn clean"
                 echo "========testing A========"
@@ -48,8 +47,8 @@ pipeline{
            }
             steps{
                 sh '''
-                mvn compile
-                mvn test 
+                cd aurus-aesdk-service-enterprise/ && mvn compile
+                cd aurus-aesdk-service-enterprise/ && mvn test 
                 ''' 
                 echo "========compile A========"
             }
@@ -57,7 +56,7 @@ pipeline{
         stage("Maven build stage package"){
             steps{
                 sh ''' 
-                mvn install 
+                cd aurus-aesdk-service-enterprise && mvn install 
                 '''
                 echo "========building A========"
             }
