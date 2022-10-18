@@ -19,7 +19,6 @@ pipeline{
                 java --verion 
                 '''
             }
-        }
         }    
         stage("Maven compile stage"){
            input {
