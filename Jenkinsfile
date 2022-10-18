@@ -47,9 +47,8 @@ pipeline{
            }
             steps{
                 sh '''
-                cd aurus-aesdk-service-enterprise/ && mvn compile
-                cd aurus-aesdk-service-enterprise/ && mvn test 
-                ''' 
+                cd aurus-aesdk-service-enterprise/ && mvn compile && mvn test
+                 ''' 
                 echo "========compile A========"
             }
         }
