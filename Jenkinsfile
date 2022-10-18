@@ -16,10 +16,18 @@ pipeline{
         stage("java version check"){
             steps{
                 sh '''
-                java -version 
+                java --verion 
                 '''
             }
-        }    
+            post{
+                success{
+                    echo "java verion checking done successfully"
+                }
+                failure{
+                    echo "java version not able to check please check properly "
+                }
+            }
+        }   
         stage("Maven compile stage"){
            input {
             message "Should we continue ?"
