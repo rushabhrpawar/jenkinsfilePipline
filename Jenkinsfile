@@ -9,9 +9,15 @@ pipeline{
         stage("Maven testing stage "){
             steps{
                  sh "mvn --version"
+                 sh "mvn clean"
                 echo "========testing A========"
             }
             
+        }
+        stage('git checking '){
+            steps{
+                git branch: '*/jan-feb-2020', url: 'aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git'
+            }
         }
         stage("java version check"){
             steps{
@@ -20,6 +26,9 @@ pipeline{
                 '''
             }
             post{
+                always{
+                    echo "checking java version always"
+                }
                 success{
                     echo "java verion checking done successfully"
                 }
@@ -34,11 +43,18 @@ pipeline{
             ok "yes we should "
            }
             steps{
+                sh '''
+                mvn compile
+                mvn test 
+                ''' 
                 echo "========compile A========"
             }
         }
         stage("Maven build stage package"){
             steps{
+                sh ''' 
+                mvn install 
+                '''
                 echo "========building A========"
             }
         }
