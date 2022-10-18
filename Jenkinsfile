@@ -3,12 +3,13 @@ pipeline{
     tools {
         maven 'mavenBuild'
         jdk 'javaversion8'
-               
+        
     }
     stages{
          stage('git checking '){
-            steps{
-               git branch: '*/jan-feb-2020', url: 'aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git'
+            steps{ '''
+                git clone --branch /jan-feb-2020 aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git'
+            '''            
             }
         }
         stage("Maven testing stage "){
