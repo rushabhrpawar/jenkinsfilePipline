@@ -1,9 +1,15 @@
 pipeline{
     agent any
+    tools {
+        maven 'mavenBuild'
+    }
 
     stages{
         stage("Maven testing stage "){
-            steps{
+            steps{ 
+                sh '''
+                mvn -version 
+                '''
                 echo "========testing A========"
             }
             
