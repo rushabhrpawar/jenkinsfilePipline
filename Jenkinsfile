@@ -2,6 +2,9 @@ pipeline{
     agent any
     tools {
         maven 'mavenBuild'
+        
+    }
+    tools {
         jdk 'javaversion8'
     }
 
