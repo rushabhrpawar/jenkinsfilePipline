@@ -8,10 +8,18 @@ pipeline{
     stages{
         stage("Maven testing stage "){
             steps{
-                 sh 'mvn --version'
+                 sh "mvn --version"
                 echo "========testing A========"
             }
             
+        }
+        stage("java version check"){
+            steps{
+                sh '''
+                java --verion 
+                '''
+            }
+        }
         }    
         stage("Maven compile stage"){
            input {
