@@ -4,10 +4,6 @@ pipeline{
         maven 'mavenBuild'
         
     }
-    tools {
-        jdk 'javaversion8'
-    }
-
     stages{
         stage("Maven testing stage "){
             steps{
