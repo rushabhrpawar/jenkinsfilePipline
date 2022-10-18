@@ -16,7 +16,7 @@ pipeline{
             }
             
         }
-        stage('checking java version'){
+        stage("checking java version"){
             steps{
                 sh 
                 '''
