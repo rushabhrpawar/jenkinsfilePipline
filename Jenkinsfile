@@ -9,7 +9,7 @@ pipeline{
          stage('git checking '){
             steps{ 
                 sh '''
-                git clone --branch /jan-feb-2020 aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git
+                git clone --branch jan-feb-2020 aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git
             '''            
             }
         }
