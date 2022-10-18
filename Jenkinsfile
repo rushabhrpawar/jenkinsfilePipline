@@ -7,10 +7,7 @@ pipeline{
     stages{
         stage("Maven testing stage "){
             steps{
-                sh 
-                '''
-                mvn --version
-                '''
+                 sh 'mvn --version'
                 echo "========testing A========"
             }
             
