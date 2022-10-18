@@ -14,7 +14,7 @@ pipeline{
                 echo "========testing A========"
             }
             
-        }
+        }    
         stage("Maven compile stage"){
            input {
             message "Should we continue ?"
