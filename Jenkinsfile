@@ -6,17 +6,17 @@ pipeline{
         
     }
     stages{
-         stage('git checking '){
-            steps{ 
-                sh '''
-                git clone --branch jan-feb-2020 aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git
-            '''            
-            }
-        }
+        //  stage('git checking '){
+        //     steps{ 
+        //         sh '''
+        //         git clone --branch jan-feb-2020 aurusgit@10.200.10.88:products/Java-AESDK/aurus-aesdk-service-enterprise/aurus-aesdk-service-enterprise.git
+        //     '''            
+        //     }
+        // }
         stage("Maven testing stage "){
             steps{
                  sh "mvn --version"
-                 sh "cd aurus-aesdk-service-enterprise/ && mvn clean"
+                //  sh "mvn clean"
                 echo "========testing A========"
             }
             
@@ -46,17 +46,18 @@ pipeline{
             ok "yes we should "
            }
             steps{
-                sh '''
-                cd aurus-aesdk-service-enterprise/ && mvn compile && mvn test
-                 ''' 
+                // sh '''
+                // mvn compile && mvn test 
+                
+                // ''' 
                 echo "========compile A========"
             }
         }
         stage("Maven build stage package"){
             steps{
-                sh ''' 
-                cd aurus-aesdk-service-enterprise && mvn install 
-                '''
+                // sh ''' 
+                //  mvn install 
+                // '''
                 echo "========building A========"
             }
         }
